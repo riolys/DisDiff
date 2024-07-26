@@ -10,6 +10,7 @@ Official Code of [Disrupting Diffusion: Token-Level Attention Erasure Attack aga
 
 ## Environment
 Please follow [Anti-DreamBooth](https://github.com/VinAIResearch/Anti-DreamBooth) to install the environment&base codes&datasets.
+For visualizations, use this notebook of [Attend and excite]([https://github.com/yuval-alaluf/Attend-and-Excite](https://github.com/yuval-alaluf/Attend-and-Excite/blob/main/notebooks/explain.ipynb)).
 
 ## Codes and Usage
 Concat the attacks and scripts folders with the same name folders in [Anti-DreamBooth](https://github.com/VinAIResearch/Anti-DreamBooth).
