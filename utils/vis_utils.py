@@ -5,8 +5,8 @@ import cv2
 import numpy as np
 import torch
 
-from utils2 import ptp_utils
-from utils2.ptp_utils import AttentionStore, aggregate_attention
+from utils import ptp_utils
+from utils.ptp_utils import AttentionStore, aggregate_attention
 
 
 def show_cross_attention(prompt: str,

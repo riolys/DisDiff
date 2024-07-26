@@ -1,8 +1,8 @@
 from typing import List
 import torch
 from torch.nn import functional as F
-from utils2.gaussian_smoothing import GaussianSmoothing
-from utils2.ptp_utils import AttentionStore, aggregate_attention
+from utils.gaussian_smoothing import GaussianSmoothing
+from utils.ptp_utils import AttentionStore, aggregate_attention
 import ipdb
 
 class Attmap():
