@@ -4,8 +4,8 @@
 
 Official Code of [Disrupting Diffusion: Token-Level Attention Erasure Attack against Diffusion-based Customization](https://arxiv.org/abs/2405.20584)
 
+<img src="https://github.com/user-attachments/assets/12a97d59-db3a-4ebc-8f96-855f0c371af4" alt="image" width="650" height="650"/>
 
-![image](https://github.com/user-attachments/assets/12a97d59-db3a-4ebc-8f96-855f0c371af4)
 
 
 ## Environment
@@ -26,5 +26,4 @@ If you find DisDiff is helpful to your work, please cite us by
   journal={arXiv preprint arXiv:2405.20584},
   
   year={2024}
-  
 }
