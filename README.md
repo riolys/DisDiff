@@ -1,4 +1,4 @@
-# DisDiff  (ACM MM2024)
+# DisDiff  (ACM MM2024) 🌟
 
 ![arXiv](https://img.shields.io/badge/arxiv-2405.20584-brightgreen?style=flat&link=https%3A%2F%2Farxiv.org%2Fabs%2F2405.2058)
 
@@ -12,7 +12,8 @@ Official Code of [Disrupting Diffusion: Token-Level Attention Erasure Attack aga
 Please follow [Anti-DreamBooth](https://github.com/VinAIResearch/Anti-DreamBooth) to install the environment&base codes&datasets.
 
 ## Codes and Usage
-Coming soon...
+Concat the attacks and scripts folders with the same name folders in [Anti-DreamBooth](https://github.com/VinAIResearch/Anti-DreamBooth).
+
 
 ## Cite
 If you find DisDiff is helpful to your work, please cite us by
