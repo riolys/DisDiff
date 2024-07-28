@@ -3,7 +3,6 @@ import torch
 from torch.nn import functional as F
 from utils.gaussian_smoothing import GaussianSmoothing
 from utils.ptp_utils import AttentionStore, aggregate_attention
-import ipdb
 
 class Attmap():
     def __init__(self, prompt, tokenizer) -> None:
@@ -53,7 +52,6 @@ class Attmap():
             from_where=("up", "down", "mid"),
             is_cross=True,
             select=0)
-        ipdb.set_trace()
         max_attention_per_index = self._compute_max_attention_per_index(
             attention_maps=attention_maps,
             indices_to_alter=indices_to_alter,
@@ -73,7 +71,6 @@ class Attmap():
             from_where=("up", "down", "mid"),
             is_cross=True,
             select=0)
-        # ipdb.set_trace()
         map = attention_maps[:, :, indices_to_alter]
         return map
     
@@ -92,19 +89,15 @@ class Attmap():
         #map -- [16, 16, len(prompt)]
         map = F.softmax(map * 100, dim=-1)
         token_attention = torch.sum(torch.square(map[:, :, token2ignore]))
-        # ipdb.set_trace()
         return (1 - token_attention/torch.sum(torch.square(map))) ** 2
     
     @staticmethod
     def _compute_energy_loss2(map, token2ignore):
         #map -- [16, 16, len(prompt)]
-        # ipdb.set_trace()
         max_map = torch.sum(map, axis=(0,1))
         token2ignore = torch.argmax(max_map)
-        # ipdb.set_trace()
         map = F.softmax(map * 100, dim=-1)
         token_attention = torch.sum(torch.square(map[:, :, token2ignore]))
-        # ipdb.set_trace()
         return (1 - token_attention/torch.sum(torch.square(map))) ** 2
     
     @staticmethod
@@ -116,7 +109,6 @@ class Attmap():
         indices_to_alter = list(range(1, prompt_length + 1))
         token2ignore = [i - 1 for i in token2ignore] 
         map = self._get_attention_map(attention_store=controller, indices_to_alter=indices_to_alter)
-        # ipdb.set_trace()
         if loss_func == "l1":
             return  self._compute_l1_loss(map, token2ignore)
         elif loss_func == "energy":

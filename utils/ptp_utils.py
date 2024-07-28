@@ -6,7 +6,6 @@ import torch
 from IPython.display import display
 from PIL import Image
 from typing import Union, Tuple, List
-import ipdb
 from diffusers.models.cross_attention import CrossAttention
 # from diffusers.models.attention_processor import Attention as CrossAttention
 def text_under_image(image: np.ndarray, text: str, text_color: Tuple[int, int, int] = (0, 0, 0)) -> np.ndarray:
@@ -65,8 +64,6 @@ class AttendExciteCrossAttnProcessor:
         batch_size, sequence_length, _ = hidden_states.shape
 
         attention_mask = attn.prepare_attention_mask(attention_mask, sequence_length, 1)
-        import ipdb
-        # ipdb.set_trace()
         query = attn.to_q(hidden_states)
 
         is_cross = encoder_hidden_states is not None
@@ -89,7 +86,6 @@ class AttendExciteCrossAttnProcessor:
         hidden_states = attn.to_out[0](hidden_states)
         # dropout
         hidden_states = attn.to_out[1](hidden_states)
-        # ipdb.set_trace()
         return hidden_states
 
 
@@ -118,9 +114,6 @@ def register_attention_control(model, controller):
             attnstore=controller, place_in_unet=place_in_unet
         )
 
-    # import ipdb
-    # ipdb.set_trace()
-    # model.unet.set_attn_processor(attn_procs)
     model.set_attn_processor(attn_procs)
     controller.num_att_layers = cross_att_count
 

@@ -6,7 +6,6 @@ import logging
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 from pathlib import Path
-
 import datasets
 import diffusers
 import numpy as np
@@ -26,7 +25,6 @@ from tqdm.auto import tqdm
 from transformers import AutoTokenizer, PretrainedConfig
 import torchvision
 from matplotlib import pyplot as plt
-import ipdb
 import sys
 sys.path.append("..")
 sys.path.append(".")
@@ -748,7 +746,6 @@ def main(args):
     )
 
     noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="scheduler")
-    # ipdb.set_trace()
     vae = AutoencoderKL.from_pretrained(
         args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision
     ).cuda()
