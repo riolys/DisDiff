@@ -655,8 +655,8 @@ def main(args):
 
     accelerator = Accelerator(
         mixed_precision=args.mixed_precision,
-        log_with=args.report_to,
-        logging_dir=logging_dir,
+        # log_with=args.report_to,
+        # logging_dir=logging_dir,
     )
 
     logging.basicConfig(
