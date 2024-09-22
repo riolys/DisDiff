@@ -846,11 +846,11 @@ def main(args):
             os.makedirs(save_folder, exist_ok=True)
             noised_imgs = perturbed_data.detach()
             img_names = [
-                str(instance_path).split("/")[-1]
+                str(instance_path).split("/")[-1].split(".")[0]
                 for instance_path in list(Path(args.instance_data_dir_for_adversarial).iterdir())
             ]
             for img_pixel, img_name in zip(noised_imgs, img_names):
-                save_path = os.path.join(save_folder, f"{i+1}_noise_{img_name}")
+                save_path = os.path.join(save_folder, f"{i+1}_noise_{img_name}.png")
                 Image.fromarray(
                     (img_pixel * 127.5 + 128).clamp(0, 255).to(torch.uint8).permute(1, 2, 0).cpu().numpy()
                 ).save(save_path)
