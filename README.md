@@ -25,11 +25,11 @@ bash scripts/disdiff.sh
 If you find DisDiff is helpful to your work, please cite our work
 
 ```
-@article{liu2024disrupting,
-  title={Disrupting Diffusion: Token-Level Attention Erasure Attack against Diffusion-based Customization},
-  author={Liu, Yisu and An, Jinyang and Zhang, Wanqian and Wu, Dayan and Gu, Jingzi and Lin, Zheng and Wang, Weiping},
-  booktitle = {Proceedings of the 32nd ACM International Conference on Multimedia},
-  year={2024},
-  series = {MM '24}
+@inproceedings{
+liu2024disrupting,
+title={Disrupting Diffusion: Token-Level Attention Erasure Attack against Diffusion-based Customization},
+author={Liu, Yisu and An, Jinyang and Zhang, Wanqian and Wu, Dayan and Gu, Jingzi and Lin, Zheng and Wang, Weiping},
+booktitle = {Proceedings of the 32nd ACM International Conference on Multimedia},
+year={2024}
 }
 ```
